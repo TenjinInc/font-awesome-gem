@@ -21,7 +21,8 @@ lib/font_awesome/UPGRADING.md
 lib/font_awesome/composer.json
 lib/font_awesome/css/
 lib/font_awesome/js-packages/@fortawesome/fontawesome-common-types/
-lib/font_awesome/js-packages/@fortawesome/fontawesome-free/css/.all.css.swp
+lib/font_awesome/js-packages/@fortawesome/fontawesome-free/attribution.js
+lib/font_awesome/js-packages/@fortawesome/fontawesome-free/package.json
 lib/font_awesome/js-packages/@fortawesome/fontawesome-svg-core/
 lib/font_awesome/js-packages/@fortawesome/free-brands-svg-icons/
 lib/font_awesome/js-packages/@fortawesome/free-regular-svg-icons/
