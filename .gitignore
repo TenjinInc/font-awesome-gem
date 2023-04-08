@@ -10,6 +10,9 @@
 # rspec failure tracking
 .rspec_status
 
+# No need for lockfile on gem
+Gemfile.lock
+
 # We only need the lib/font_awesome/js-packages/@fortawesome/fontawesome-free/ directory
 lib/font_awesome/.github
 lib/font_awesome/CHANGELOG.md
