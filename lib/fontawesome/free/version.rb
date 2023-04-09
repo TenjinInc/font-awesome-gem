@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 module FontAwesome
-   VERSION = '0.1.0'
+   module Free
+      VERSION = '0.1.2'
+   end
 end

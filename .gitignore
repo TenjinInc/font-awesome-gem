@@ -13,28 +13,28 @@
 # No need for lockfile on gem
 Gemfile.lock
 
-# We only need the lib/font_awesome/js-packages/@fortawesome/fontawesome-free/ directory
-lib/font_awesome/.github
-lib/font_awesome/CHANGELOG.md
-lib/font_awesome/CODE_OF_CONDUCT.md
-lib/font_awesome/CONTRIBUTING.md
-lib/font_awesome/LICENSE.txt
-lib/font_awesome/README.md
-lib/font_awesome/UPGRADING.md
-lib/font_awesome/composer.json
-lib/font_awesome/css/
-lib/font_awesome/js-packages/@fortawesome/fontawesome-common-types/
-lib/font_awesome/js-packages/@fortawesome/fontawesome-free/attribution.js
-lib/font_awesome/js-packages/@fortawesome/fontawesome-free/package.json
-lib/font_awesome/js-packages/@fortawesome/fontawesome-svg-core/
-lib/font_awesome/js-packages/@fortawesome/free-brands-svg-icons/
-lib/font_awesome/js-packages/@fortawesome/free-regular-svg-icons/
-lib/font_awesome/js-packages/@fortawesome/free-solid-svg-icons/
-lib/font_awesome/js/
-lib/font_awesome/less/
-lib/font_awesome/metadata/
-lib/font_awesome/otfs/
-lib/font_awesome/scss/
-lib/font_awesome/sprites/
-lib/font_awesome/svgs/
-lib/font_awesome/webfonts/
+# We only need the lib/fontawesome/free/font_awesome/js-packages/@fortawesome/fontawesome-free/ directory
+lib/fontawesome/font-awesome-src/.github/
+lib/fontawesome/font-awesome-src/CHANGELOG.md
+lib/fontawesome/font-awesome-src/CODE_OF_CONDUCT.md
+lib/fontawesome/font-awesome-src/CONTRIBUTING.md
+lib/fontawesome/font-awesome-src/LICENSE.txt
+lib/fontawesome/font-awesome-src/README.md
+lib/fontawesome/font-awesome-src/UPGRADING.md
+lib/fontawesome/font-awesome-src/composer.json
+lib/fontawesome/font-awesome-src/css/
+lib/fontawesome/font-awesome-src/js-packages/@fortawesome/fontawesome-common-types/
+lib/fontawesome/font-awesome-src/js-packages/@fortawesome/fontawesome-free/attribution.js
+lib/fontawesome/font-awesome-src/js-packages/@fortawesome/fontawesome-free/package.json
+lib/fontawesome/font-awesome-src/js-packages/@fortawesome/fontawesome-svg-core/
+lib/fontawesome/font-awesome-src/js-packages/@fortawesome/free-brands-svg-icons/
+lib/fontawesome/font-awesome-src/js-packages/@fortawesome/free-regular-svg-icons/
+lib/fontawesome/font-awesome-src/js-packages/@fortawesome/free-solid-svg-icons/
+lib/fontawesome/font-awesome-src/js/
+lib/fontawesome/font-awesome-src/less/
+lib/fontawesome/font-awesome-src/metadata/
+lib/fontawesome/font-awesome-src/otfs/
+lib/fontawesome/font-awesome-src/scss/
+lib/fontawesome/font-awesome-src/sprites/
+lib/fontawesome/font-awesome-src/svgs/
+lib/fontawesome/font-awesome-src/webfonts/

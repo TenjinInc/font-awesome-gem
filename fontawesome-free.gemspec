@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-require_relative 'lib/gem_version'
+require_relative 'lib/fontawesome/free/version'
 
 Gem::Specification.new do |spec|
-   spec.name    = 'font-awesome-free'
-   spec.version = FontAwesome::VERSION
+   spec.name    = 'fontawesome-free'
+   spec.version = FontAwesome::Free::VERSION
    spec.authors = ['Robin Miller']
    spec.email   = ['robin@tenjin.ca']
 
    spec.summary               = 'Gem wrapper for FontAwesome Free edition'
    spec.description           = 'An unofficial gem wrapper for the free version of the FontAwesome icon library.'
-   spec.homepage              = 'https://github.com/TenjinInc/Font-Awesome-Gem'
+   spec.homepage              = 'https://github.com/TenjinInc/font-awesome-gem'
    spec.license               = 'MIT'
    spec.required_ruby_version = '>= 2.7.0'
 
    spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
    spec.metadata['homepage_uri']    = spec.homepage
-   spec.metadata['source_code_uri'] = 'https://github.com/TenjinInc/Font-Awesome-Gem'
+   spec.metadata['source_code_uri'] = 'https://github.com/TenjinInc/font-awesome-gem'
 
    # Specify which files should be added to the gem when it is released.
    # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

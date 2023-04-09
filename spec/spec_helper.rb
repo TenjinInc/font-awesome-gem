@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'lib/font_awesome'
+require_relative '../lib/fontawesome/free'
 
 RSpec.configure do |config|
    # Enable flags like --only-failures and --next-failure

@@ -7,22 +7,23 @@ RSpec::Core::RakeTask.new(:spec)
 
 require 'rubocop/rake_task'
 require 'pathname'
+require_relative 'lib/fontawesome/free'
 
 RuboCop::RakeTask.new
 
 task default: %i[spec rubocop]
 
 namespace :fa do
-   download_path      = Pathname.new(__dir__) / 'lib' / 'font_awesome'
-   download_head_path = download_path / '.git' / 'HEAD'
+   download_path = FontAwesome::Free::ROOT
+   head_path     = download_path / '.git' / 'HEAD'
 
    directory download_path
 
-   file download_head_path => [download_path] do
+   file head_path => [download_path] do
       `git clone https://github.com/FortAwesome/Font-Awesome.git #{ download_path.cleanpath }`
    end
 
-   task update: [download_head_path] do
+   task update: [head_path] do
       Dir.chdir(download_path) do
          puts `git pull`
 
@@ -30,10 +31,10 @@ namespace :fa do
 
          warn <<~MSG
             FontAwesome: #{ current_version.strip }
-            Gem:         #{ FontAwesome::VERSION }
+            Gem:         #{ FontAwesome::Free::VERSION }
          MSG
 
-         if current_version.strip != FontAwesome::VERSION.strip
+         if current_version.strip != FontAwesome::Free::VERSION.strip
             warn 'The gem version is out of date. Update version.rb and run: bundle exec rake release'
          end
       end
