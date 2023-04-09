@@ -7,24 +7,31 @@ require 'pathname'
 module FontAwesome
    # Defines technology group types and accessors for them
    module Free
-      ROOT = Pathname.new(__dir__) / 'font-awesome-src'
+      # The root directory of all of the FontAwesome files
+      ROOT = Pathname.new(__dir__) / 'font-awesome-src' / 'js-packages' / '@fortawesome' / 'fontawesome-free'
 
-      # Retrieves the path to the files for the given technology group.
+      # List of known technology types
+      TYPES = %i[css js less scss sprites svgs webfonts].freeze
+
+      # Retrieves the path to the files for the given technology type.
       #
-      # @param [Symbol] type - One of: :css, :js, :less, :scss, :sprites, :svgs, :webfonts
+      # @param [Symbol] type - One of the types defined in TYPES
       def self.source_path(type)
-         directory = case type
-                     when :css, :js, :less, :scss, :sprites, :svgs, :webfonts
-                        ROOT / type.to_s
-                     else
-                        raise "Unknown FontAwesome group #{ type.to_s }. Must be one of: :css, :js, :less, :scss, :sprites, :svgs, :webfonts"
-                     end
+         unless TYPES.include? type
+            raise UnknownTechTypeError,
+                  "Unknown FontAwesome group #{ type }. Must be one of: #{ TYPES.join(', ') }"
+         end
+
+         directory = ROOT / type.to_s
 
          directory.cleanpath.to_s
       end
 
       class << self
          alias [] source_path
+      end
+
+      class UnknownTechTypeError < RuntimeError
       end
    end
 end

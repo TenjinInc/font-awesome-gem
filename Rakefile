@@ -27,15 +27,15 @@ namespace :fa do
       Dir.chdir(download_path) do
          puts `git pull`
 
-         current_version = `git tag | grep -v "[[:alpha:]]" | sort --version-sort | tail -1`
+         current_version = Gem::Version.new(`git tag | grep -v "[[:alpha:]]" | sort --version-sort | tail -1`)
 
          warn <<~MSG
-            FontAwesome: #{ current_version.strip }
-            Gem:         #{ FontAwesome::Free::VERSION }
+            FontAwesome: #{ current_version }
+            Gem:         #{ Gem::Version.new(FontAwesome::Free::VERSION) }
          MSG
 
-         if current_version.strip != FontAwesome::Free::VERSION.strip
-            warn 'The gem version is out of date. Update version.rb and run: bundle exec rake release'
+         if current_version > FontAwesome::Free::VERSION
+            warn 'There is a new version of FontAwesome. Update version.rb and run: bundle exec rake release'
          end
       end
    end

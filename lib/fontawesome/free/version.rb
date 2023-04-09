@@ -2,6 +2,6 @@
 
 module FontAwesome
    module Free
-      VERSION = '0.1.2'
+      VERSION = '6.4.0.0'
    end
 end

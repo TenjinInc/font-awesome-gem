@@ -1,10 +1,10 @@
 # Gem Wrapper: FontAwesome - Free
 
-This is an unofficial thin wrapper gem to distribute the free version of
+An unofficial wrapper gem to distribute the free version of
 the [FontAwesome](https://github.com/FortAwesome/Font-Awesome) icon library.
 
 Please see that project for the original documentation on how to use FontAwesome in general. Continue below for details
-specific to using this gem.
+specific to using this gem in Ruby.
 
 ## Installation
 
@@ -18,7 +18,14 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+Access the file path for assets by providing the technology type symbol to `FontAwesome::Free[type]`, eg:
+
+```ruby
+# Returns the absolute path to the Font Awesome css files directory.
+FontAwesome::Free[:css]
+```
+
+You can also access the parent directory by using `FontAwesome::Free:ROOT`.
 
 ## Versioning
 
@@ -38,9 +45,9 @@ After checking out the repo, run:
 
     bundle install 
 
-To install this gem onto your local machine, run:
+To update the version of FontAwesome from Github, run:
 
-    bundle exec rake install
+    bundle exec rake fa:update
 
 To release a new version, **update the version number** in `version.rb`, and then run:
 
@@ -51,6 +58,10 @@ which will:
 1. create a git tag for the version,
 2. push git commits and the created tag,
 3. and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+To install this gem onto your local machine, run:
+
+    bundle exec rake install
 
 ## Contributing
 
