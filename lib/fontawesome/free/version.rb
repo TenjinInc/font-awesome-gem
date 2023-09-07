@@ -2,6 +2,7 @@
 
 module FontAwesome
    module Free
-      VERSION = '6.4.0.0'
+      # First three should match the FA version, last version number is for patches to the gem wrapper
+      VERSION = '6.4.2.0'
    end
 end
