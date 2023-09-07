@@ -2,5 +2,11 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in font-awesome-gem.gemspec
+# Gem's dependencies in font-awesome-gem.gemspec
 gemspec
+
+# Development dependencies go here
+gem 'rake', '~> 13.0'
+gem 'rspec', '~> 3.0'
+gem 'rubocop', '~> 1.56'
+gem 'simplecov', '~> 0.22'

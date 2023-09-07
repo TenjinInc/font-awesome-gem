@@ -9,7 +9,7 @@ RSpec.describe FontAwesome::Free do
       it 'should define the local path of the FontAwesome files' do
          expect(FontAwesome::Free::ROOT.absolute?).to eq true
 
-         files = FontAwesome::Free::ROOT.glob('*').collect(&:basename).collect(&:to_s)
+         files = FontAwesome::Free::ROOT.glob('*').collect { |file| file.basename.to_s }
          expect(files).to include 'css'
          expect(files).to include 'js'
          expect(files).to include 'less'

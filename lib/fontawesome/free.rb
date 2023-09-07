@@ -16,6 +16,7 @@ module FontAwesome
       # Retrieves the path to the files for the given technology type.
       #
       # @param [Symbol] type - One of the types defined in TYPES
+      # @return [String] the path to files for that tech
       def self.source_path(type)
          unless TYPES.include? type
             raise UnknownTechTypeError,
