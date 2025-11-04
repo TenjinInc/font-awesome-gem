@@ -6,6 +6,11 @@ for changes to the core library.
 
 * none
 
+## [7.1.0.0] - 2025-11-03
+
+* Updated to FontAwesome 7.1.0
+* Updated Ruby minimum version to 3.4
+
 ## [6.4.2.1] - 2023-09-07
 
 * Updated Ruby minimum version to 3.1

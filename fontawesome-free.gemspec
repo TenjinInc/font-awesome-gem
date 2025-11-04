@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
    spec.description           = 'An unofficial gem wrapper for the free version of the FontAwesome icon library.'
    spec.homepage              = 'https://github.com/TenjinInc/font-awesome-gem'
    spec.license               = 'MIT'
-   spec.required_ruby_version = '>= 3.1'
+   spec.required_ruby_version = '>= 3.4'
 
    spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
@@ -31,7 +31,4 @@ Gem::Specification.new do |spec|
    spec.bindir        = 'exe'
    spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
    spec.require_paths = ['lib']
-
-   # Dependencies
-   # spec.add_dependency "example-gem", "~> 1.0"
 end
