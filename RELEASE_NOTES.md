@@ -6,6 +6,10 @@ for changes to the core library.
 
 * none
 
+## [7.3.1.0] - 2026-07-16
+
+* Updated to FontAwesome 7.3.1
+
 ## [7.3.0.0] - 2026-06-29
 
 * Updated to FontAwesome 7.3.0
