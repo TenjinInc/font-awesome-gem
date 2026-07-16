@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
+Bundler.require :test
+
+SimpleCov.start
+
 require_relative '../lib/fontawesome/free'
-require 'simplecov'
 
 RSpec.configure do |config|
    # Enable flags like --only-failures and --next-failure
