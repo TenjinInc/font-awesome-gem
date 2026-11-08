@@ -23,11 +23,15 @@ namespace :fa do
    directory download_path
 
    file head_path => [download_path] do
-      `git clone https://github.com/FortAwesome/Font-Awesome.git #{ download_path.cleanpath }`
+      unless download_path.cleanpath.exist?
+         `git clone https://github.com/FortAwesome/Font-Awesome.git #{ download_path.cleanpath }`
+      end
    end
 
    task update: [head_path] do
-      Dir.chdir(download_path) do
+      Dir.chdir(download_path.cleanpath) do
+         puts `pwd`
+
          puts `git pull`
 
          current_version = Gem::Version.new(`git tag | grep -v "[[:alpha:]]" | sort --version-sort | tail -1`)
@@ -36,6 +40,11 @@ namespace :fa do
             FontAwesome: #{ current_version }
             Gem:         #{ Gem::Version.new(FontAwesome::Free::VERSION) }
          MSG
+
+         if current_version.version == '0'
+            warn 'Error: Cannot parse FontAwesome version.'
+            exit 1
+         end
 
          if current_version > FontAwesome::Free::VERSION
             warn 'There is a new version of FontAwesome. Update version.rb and run: bundle exec rake release'
