@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-SimpleCov.start do
+SimpleCov.configure do
    coverage_dir '.coverage'
 
    enable_coverage :branch
