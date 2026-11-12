@@ -19,18 +19,13 @@ task default: %i[spec rubocop]
 namespace :fa do
    project_source = 'https://github.com/FortAwesome/Font-Awesome.git'
    download_path  = FontAwesome::Free::ROOT
-   head_path      = download_path / '.git' / 'HEAD'
 
    directory download_path do
       system('git', 'submodule', 'add', project_source, download_path.cleanpath.to_s) ||
             raise('Failed to init git submodule.')
    end
 
-   file head_path => [download_path] do
-      ''
-   end
-
-   task update: [head_path] do
+   task update: [download_path] do
       Dir.chdir(download_path.cleanpath) do
          puts "Into: #{ pwd }"
 
