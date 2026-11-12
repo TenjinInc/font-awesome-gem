@@ -1,3 +1,6 @@
+# https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master/55570998#55570998
 [submodule "lib/fontawesome/font-awesome-src/js-packages/@fortawesome/fontawesome-free"]
 	path = lib/fontawesome/font-awesome-src/js-packages/@fortawesome/fontawesome-free
 	url = https://github.com/FortAwesome/Font-Awesome.git
+	update = merge
+	branch = 7.x
