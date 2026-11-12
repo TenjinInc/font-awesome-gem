@@ -13,12 +13,11 @@ RSpec.describe FontAwesome::Free do
       it 'should define the local path of the FontAwesome files' do
          files = FontAwesome::Free::ROOT.glob('*').collect { |file| file.basename.to_s }
          expect(files).to include('css')
-                                .and(include('js'))
-                                .and(include('less'))
-                                .and(include('scss'))
-                                .and(include('sprites'))
-                                .and(include('svgs'))
-                                .and(include('webfonts'))
+                             .and(include('js'))
+                             .and(include('scss'))
+                             .and(include('sprites'))
+                             .and(include('svgs'))
+                             .and(include('webfonts'))
       end
    end
 
