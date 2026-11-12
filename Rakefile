@@ -27,9 +27,11 @@ namespace :fa do
 
    task update: [download_path] do
       Dir.chdir(download_path.cleanpath) do
-         puts "Into: #{ pwd }"
+         warn "cd into: #{ pwd }"
 
-         puts `git pull`
+         warn 'Fetching FontAwesome updates...'
+         # default branch is the most recent release
+         `git pull`
 
          current_version = Gem::Version.new(`git tag | grep -v "[[:alpha:]]" | sort --version-sort | tail -1`)
 
@@ -39,12 +41,14 @@ namespace :fa do
          MSG
 
          if current_version.version == '0'
-            warn 'Error: Cannot parse FontAwesome version.'
+            warn 'Error: Cannot parse FontAwesome source version.'
             exit 1
          end
 
          if current_version > FontAwesome::Free::VERSION
             warn 'There is a new version of FontAwesome. Update version.rb and run: bundle exec rake release'
+         else
+            warn 'Looks like everything is up to date.'
          end
       end
    end
