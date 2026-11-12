@@ -17,20 +17,22 @@ RuboCop::RakeTask.new
 task default: %i[spec rubocop]
 
 namespace :fa do
-   download_path = FontAwesome::Free::ROOT
-   head_path     = download_path / '.git' / 'HEAD'
+   project_source = 'https://github.com/FortAwesome/Font-Awesome.git'
+   download_path  = FontAwesome::Free::ROOT
+   head_path      = download_path / '.git' / 'HEAD'
 
-   directory download_path
+   directory download_path do
+      system('git', 'submodule', 'add', project_source, download_path.cleanpath.to_s) ||
+            raise('Failed to init git submodule.')
+   end
 
    file head_path => [download_path] do
-      unless download_path.cleanpath.exist?
-         `git clone https://github.com/FortAwesome/Font-Awesome.git #{ download_path.cleanpath }`
-      end
+      ''
    end
 
    task update: [head_path] do
       Dir.chdir(download_path.cleanpath) do
-         puts `pwd`
+         puts "Into: #{ pwd }"
 
          puts `git pull`
 
