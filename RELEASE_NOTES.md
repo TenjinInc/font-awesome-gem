@@ -8,7 +8,7 @@ for changes to the core library.
 
 ## [7.3.1.1] - 2026-11-12
 
-* Fixed update process. Prior improperly synced gem versions yanked.
+* Fixed update process.
 * Re-released FontAwesome 7.3.1
 
 ## [7.3.1.0] - 2026-07-16
