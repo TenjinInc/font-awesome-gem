@@ -22,7 +22,7 @@ namespace :fa do
 
    directory download_path do
       system('git', 'submodule', 'add', project_source, download_path.cleanpath.to_s) ||
-            raise('Failed to init git submodule.')
+         raise('Failed to init git submodule.')
    end
 
    task update: [download_path] do

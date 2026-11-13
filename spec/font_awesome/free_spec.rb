@@ -6,37 +6,36 @@ RSpec.describe FontAwesome::Free do
    end
 
    describe 'ROOT' do
-      it 'should define the local path of the FontAwesome files parent as absolute' do
+      it 'defines the local path of the FontAwesome files parent as absolute' do
          expect(FontAwesome::Free::ROOT.absolute?).to be true
       end
 
-      it 'should define the local path of the FontAwesome files' do
+      it 'defines the local path of the FontAwesome files' do
          files = FontAwesome::Free::ROOT.glob('*').collect { |file| file.basename.to_s }
-         expect(files).to include('css')
-                             .and(include('js'))
-                             .and(include('scss'))
-                             .and(include('sprites'))
-                             .and(include('svgs'))
-                             .and(include('webfonts'))
+         expect(files).to include('css').and(include('js'))
+                                        .and(include('scss'))
+                                        .and(include('sprites'))
+                                        .and(include('svgs'))
+                                        .and(include('webfonts'))
       end
    end
 
    describe '[]' do
       FontAwesome::Free::TYPES.each do |type|
-         it "should fetch the #{ type } technology type path" do
+         it "fetches the #{ type } technology type path" do
             path = described_class[type]
 
             expect(path).to be_a(String).and end_with("/#{ type }").and include 'js-packages'
          end
 
-         it "should fetch an absolute #{ type } technology type path" do
+         it "fetches an absolute #{ type } technology type path" do
             path = described_class[type]
 
             expect(Pathname.new(path)).to be_absolute
          end
       end
 
-      it 'should raise an error when the type is unknown' do
+      it 'raises an error when the type is unknown' do
          expect do
             described_class[:tacos]
          end.to raise_error FontAwesome::Free::UnknownTechTypeError
